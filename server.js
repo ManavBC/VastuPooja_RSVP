@@ -18,8 +18,10 @@ app.get('/api/event-info', (req, res) => {
   res.json({
     hostName: process.env.HOST_NAME || 'Alex & Jamie',
     eventDate: process.env.EVENT_DATE || 'Saturday, August 9, 2026',
-    eventTime: process.env.EVENT_TIME || '4:00-8:00 PM',
-    eventAddress: process.env.EVENT_ADDRESS || '123 Maple Street, Springfield'
+    eventTime: process.env.EVENT_TIME || '10:00 AM – 1:00 PM',
+    lunchTime: process.env.LUNCH_TIME || '12:30 PM',
+    eventAddress: process.env.EVENT_ADDRESS || '123 Maple Street, Springfield',
+    hostPhone: process.env.HOST_PHONE || ''
   });
 });
 
