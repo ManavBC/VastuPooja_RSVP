@@ -21,7 +21,8 @@ app.get('/api/event-info', (req, res) => {
     eventTime: process.env.EVENT_TIME || '10:00 AM – 1:00 PM',
     lunchTime: process.env.LUNCH_TIME || '12:30 PM',
     eventAddress: process.env.EVENT_ADDRESS || '123 Maple Street, Springfield',
-    hostPhone: process.env.HOST_PHONE || ''
+    hostPhone: process.env.HOST_PHONE || '',
+    hostPhone2: process.env.HOST_PHONE2 || ''
   });
 });
 
