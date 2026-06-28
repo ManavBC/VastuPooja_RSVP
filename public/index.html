@@ -876,21 +876,27 @@ fetch('/api/event-info').then(r=>r.json()).then(info=>{
   document.getElementById('eventAddress').textContent = info.eventAddress;
   const hasPhone1 = !!info.hostPhone;
   const hasPhone2 = !!info.hostPhone2;
-  if(hasPhone1 || hasPhone2){
-    document.getElementById('phoneLine').style.display = 'flex';
-    if(hasPhone1){
-      const a = document.getElementById('phoneLink');
-      a.href = 'tel:' + info.hostPhone.replace(/\s/g,'');
-      document.getElementById('phoneText').textContent = info.hostPhone;
-      a.style.display = 'flex';
-    }
-    if(hasPhone2){
-      const a2 = document.getElementById('phoneLink2');
-      a2.href = 'tel:' + info.hostPhone2.replace(/\s/g,'');
-      document.getElementById('phoneText2').textContent = info.hostPhone2;
-      a2.style.display = 'flex';
-    }
-  }
+  if(hasPhone1){
+  const a = document.getElementById('phoneLink');
+  a.href = 'tel:' + info.hostPhone.replace(/\s/g,'');
+
+  // Hardcoded name
+  document.getElementById('phoneText').textContent =
+    'Manav: ' + info.hostPhone;
+
+  a.style.display = 'flex';
+}
+
+if(hasPhone2){
+  const a2 = document.getElementById('phoneLink2');
+  a2.href = 'tel:' + info.hostPhone2.replace(/\s/g,'');
+
+  // Hardcoded name
+  document.getElementById('phoneText2').textContent =
+    'Priya: ' + info.hostPhone2;
+
+  a2.style.display = 'flex';
+}}
 }).catch(()=>{});
 
 document.querySelectorAll('.toggle').forEach(btn=>{
